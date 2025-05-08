@@ -1,26 +1,26 @@
-package com.taller.diego.domain;
+package com.taller.diego.entity.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
 @Table(name = "user")
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,21 +32,8 @@ public class User {
     @JsonBackReference
     private Rol roleId;
 
-
-    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "username", nullable = false, unique = true)
     private String username;
-    @Column(name = "password", nullable = false)
     private String password;
 
-    public User() {
-    }
-    public User(Long id, Rol roleId, String name, String username, String password) {
-        this.id = id;
-        this.roleId = roleId;
-        this.name = name;
-        this.username = username;
-        this.password = password;
-    }
 }

@@ -1,4 +1,4 @@
-package com.taller.diego.domain;
+package com.taller.diego.entity.domain;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 

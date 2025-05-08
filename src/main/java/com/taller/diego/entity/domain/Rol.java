@@ -1,4 +1,4 @@
-package com.taller.diego.domain;
+package com.taller.diego.entity.domain;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
